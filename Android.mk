@@ -67,6 +67,7 @@ LOCAL_AAPT_FLAGS += --extra-packages com.android.ex.photo
 LOCAL_AAPT_FLAGS += --extra-packages com.android.colorpicker
 LOCAL_AAPT_FLAGS += --extra-packages com.android.contacts.common
 LOCAL_AAPT_FLAGS += --extra-packages com.android.phone.common
+LOCAL_AAPT_FLAGS += --extra-packages com.android.internal.telephony
 
 ifdef TARGET_BUILD_APPS
     LOCAL_JNI_SHARED_LIBRARIES := libframesequence libgiftranscode
