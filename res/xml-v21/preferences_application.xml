@@ -73,6 +73,13 @@
         android:defaultValue="false"
         android:persistent="true" />
 
+    <SwitchPreference
+        android:key="pref_show_emoticons"
+        android:title="@string/show_emoticons_pref_title"
+        android:persistent="true"
+        android:defaultValue="@bool/show_emoticons_pref_default"
+        android:summary="@string/show_emoticons_pref_summary" />
+
     <PreferenceScreen
             android:key="@string/advanced_pref_key"
             android:title="@string/advanced_settings" />
