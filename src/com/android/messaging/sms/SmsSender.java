@@ -38,6 +38,8 @@ import com.android.messaging.util.UiUtils;
 
 import java.util.ArrayList;
 import java.util.Random;
+import com.android.messaging.util.BuglePrefs;
+import com.android.messaging.util.BuglePrefsKeys;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -137,6 +139,13 @@ public class SmsSender {
         }
     }
 
+    private static int getRetry() {
+        final BuglePrefs prefs = Factory.get().getApplicationPrefs();
+        final int retryAttempt =
+                prefs.getInt(BuglePrefsKeys.PROCESS_PENDING_MESSAGES_RETRY_COUNT, 0);
+        return retryAttempt;
+    }
+
     public static void setResult(final Uri requestId, final int resultCode,
             final int errorCode, final int partId, int subId) {
         if (resultCode != Activity.RESULT_OK) {
@@ -146,6 +155,10 @@ public class SmsSender {
             if (errorCode != SendStatusReceiver.NO_ERROR_CODE) {
                 final Context context = Factory.get().getApplicationContext();
                 UiUtils.showToastAtBottom(getSendErrorToastMessage(context, subId, errorCode));
+            }
+            final int retry = getRetry();
+            if (retry == 0 && (resultCode == SmsManager.RESULT_ERROR_NO_SERVICE)) {
+                UiUtils.showToastAtBottom(R.string.message_queued);
             }
         } else {
             if (LogUtil.isLoggable(TAG, LogUtil.VERBOSE)) {
