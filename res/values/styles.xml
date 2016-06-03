@@ -657,7 +657,7 @@
     </style>
 
     <style name="QMConversationComposeSendText">
-        <item name="android:textColor">@color/compose_send_text_color</item>
+        <item name="android:textColor">@color/qm_compose_send_text_color</item>
         <item name="android:singleLine">false</item>
         <item name="android:textSize">@dimen/conversation_compose_send_text_size</item>
         <item name="android:gravity">center_vertical</item>
