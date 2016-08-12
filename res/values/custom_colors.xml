@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_accent">#00adef</color>
+    <color name="color_accent">@*android:color/accent_material_dark</color>
     <!-- New text colors from layouts to make theme chooser apk easier to theme -->
     <color name="compose_message_edit_text">#000000</color>
     <color name="compose_message_text_counter">#cc333333</color>
@@ -34,7 +34,7 @@
     <color name="qm_fading_edge_color">#eeeeee</color>
     <color name="qm_from_text_color">#2f2f2f</color>
     <color name="qm_recv_timestamp_text_color">#a79f9c</color>
-    <color name="qm_dialog_text_color">#00b0f0</color>
+    <color name="qm_dialog_text_color">@color/color_accent</color>
     <color name="qm_count_color">#aa000000</color>
 
     <color name="outgoing_message_bg">#e4e7e8</color>
