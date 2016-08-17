@@ -571,6 +571,7 @@ public class ConversationFragment extends Fragment implements ConversationDataLi
                             @Override
                             public void run() {
                                 view.setAlpha(1);
+                                dispatchAddFinished(holder);
                             }
                         });
                     mPopupTransitionAnimation.startAfterLayoutComplete();
